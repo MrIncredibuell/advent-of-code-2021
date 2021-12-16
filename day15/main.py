@@ -57,6 +57,8 @@ def part2(data):
         if current in visited:
             continue
         visited[current] = distance + data[current]
+        if current == (width*5-1, height*5-1):
+            return visited[current] - visited[(0,0)]
         for n in neighbors(current):
             if all([
                 n not in visited,
